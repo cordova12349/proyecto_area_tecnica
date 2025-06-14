@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyecto Técnico en Informática 2024</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-image: url('fondo.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+    }
+
+    .left-container, .right-container {
+      position: absolute;
+      top: 10px;
+      text-align: center;
+      width: 100px;
+    }
+
+    .left-container { left: 10px; }
+    .right-container { right: 10px; }
+
+    .left-container img, .right-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .left-container h5, .right-container h5 {
+      color: white;
+      margin: 5px 0 0;
+    }
+
+    .titulo-con-fondo {
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 80px;
+    }
+
+    .titulo-con-fondo img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+      z-index: 1;
+    }
+
+    .titulo-estatico {
+      position: relative;
+      z-index: 2;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .titulo-estatico span {
+      font-weight: bold;
+      margin: 0 1px;
+    }
+
+    hr {
+      border: none;
+      height: 8px;
+    }
+
+    nav {
+      margin: 40px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav > ul > li {
+      display: inline-block;
+      position: relative;
+      margin: 0 10px;
+    }
+
+    nav > ul > li > a {
+      display: block;
+      padding: 12px 20px;
+      background-color: green;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    nav > ul > li > a:hover {
+      background-color: darkgreen;
+    }
+
+    nav li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border-radius: 4px;
+      z-index: 999;
+      min-width: 180px;
+      padding: 0;
+    }
+
+    nav li:hover > ul {
+      display: block;
+    }
+
+    nav li ul li a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    /* Colores personalizados por materia */
+    nav ul > li:nth-child(2) ul {
+      background-color: #d4edda;
+    }
+    nav ul > li:nth-child(2) ul li a {
+      color: #2f4f4f;
+    }
+    nav ul > li:nth-child(2) ul li a:hover {
+      background-color: #a2d5a5;
+      color: #000;
+    }
+
+    nav ul > li:nth-child(3) ul {
+      background-color: #d0e7ff;
+    }
+    nav ul > li:nth-child(3) ul li a {
+      color: #ffffff;
+    }
+    nav ul > li:nth-child(3) ul li a:hover {
+      background-color: #7fbfff;
+      color: #000;
+    }
+
+    nav ul > li:nth-child(4) ul {
+      background-color: #fff9c4;
+    }
+    nav ul > li:nth-child(4) ul li a {
+      color: #333333;
+    }
+    nav ul > li:nth-child(4) ul li a:hover {
+      background-color: #ffeb3b;
+      color: #000;
+    }
+
+    nav ul > li:nth-child(5) ul {
+      background-color: #e1bee7;
+    }
+    nav ul > li:nth-child(5) ul li a {
+      color: #ffffff;
+    }
+    nav ul > li:nth-child(5) ul li a:hover {
+      background-color: #ce93d8;
+      color: #000;
+    }
+
+    nav ul > li:nth-child(6) ul {
+      background-color: #ffe0b2;
+    }
+    nav ul > li:nth-child(6) ul li a {
+      color: #4e342e;
+    }
+    nav ul > li:nth-child(6) ul li a:hover {
+      background-color: #ffb74d;
+      color: #000;
+    }
+
+    .encabezado-autor {
+      margin-top: 20px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+      border-radius: 10px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contenido {
+      padding: 40px;
+      text-align: justify;
+      color: black;
+      font-size: 18px;
+    }
+
+    .contenido img {
+      float: right;
+      width: 20%;
+      height: auto;
+      margin-left: 20px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contenedor izquierdo -->
+  <div class="left-container">
+    <img src="nico.jpg" alt="jossue" />
+    <h5>jossue</h5>
+  </div>
+
+  <!-- Contenedor derecho -->
+  <div class="right-container">
+    <img src="nico.gif" alt="cordova" />
+    <h5>cordova</h5>
+  </div>
+
+  <!-- Título con fondo e imagen detrás -->
+  <div class="titulo-con-fondo">
+    <img src="fondo titulo.jpg" alt="Fondo del título" />
+    <div class="titulo-estatico">
+      <span style="color: red;">P</span>
+      <span style="color: orange;">R</span>
+      <span style="color: gold;">O</span>
+      <span style="color: green;">Y</span>
+      <span style="color: blue;">E</span>
+      <span style="color: indigo;">C</span>
+      <span style="color: violet;">T</span>
+      <span style="color: red;">O</span>
+      <span style="color: green;">A</span>
+      <span style="color: green;">R</span>
+      <span style="color: green;">E</span>
+      <span style="color: green;">A</span>
+      <span style="color: blue;">T</span>
+      <span style="color: blue;">E</span>
+      <span style="color: blue;">C</span>
+      <span style="color: blue;">N</span>
+       <span style="color: blue;">I</span>
+       <span style="color: blue;">C</span>
+        <span style="color: blue;">A</span>
+      <span style="color: blue;">I</span>
+     <span style="color: blue;">N</span>
+     <span style="color: blue;">F</span>
+    <span style="color: blue;">O</span>
+    <span style="color: blue;">R</span>
+    <span style="color: blue;">M</span>
+     <span style="color: blue;">A</span>
+    <span style="color: blue;">T</span>
+    <span style="color: blue;">I</span>
+    <span style="color: blue;">C</span>
+    <span style="color: blue;">A</span>
+      <span style="color: darkorange;">2</span>
+      <span style="color: darkorange;">0</span>
+      <span style="color: darkorange;">2</span>
+      <span style="color: darkorange;">5</span>
+      <span style="color: darkorange;">-</span>
+      <span style="color: darkorange;">2</span>
+      <span style="color: darkorange;">0</span>
+      <span style="color: darkorange;">2</span>
+      <span style="color: darkorange;">6</span>
+    </div>
+  </div>
+
+  <hr style="background-color: yellow;" />
+
+  <!-- Menú principal -->
+  <nav>
+    <ul>
+      <li><a href="pagnew.html">Inicio</a></li>
+      <li>
+        <a href="#">Diseño y Desarrollo Web</a>
+        <ul>
+          <li><a href="github (2).html">Trimestre 1</a></li>
+          <li><a href="hosting.html">Trimestre 1</a></li>
+          <li><a href="#">Trimestre 2</a></li>
+          <li><a href="#">Trimestre 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Programación y Base de Datos</a>
+        <ul>
+          <li><a href="#">Trimestre 1</a></li>
+          <li><a href="#">Trimestre 2</a></li>
+          <li><a href="#">Trimestre 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Sistemas Operativos</a>
+        <ul>
+          <li><a href="#">Trimestre 1</a></li>
+          <li><a href="#">Trimestre 2</a></li>
+          <li><a href="#">Trimestre 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Soporte Técnico</a>
+        <ul>
+          <li><a href="#">Trimestre 1</a></li>
+          <li><a href="#">Trimestre 2</a></li>
+          <li><a href="#">Trimestre 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Aplicaciones Ofimáticas</a>
+        <ul>
+          <li><a href="#">Trimestre 1</a></li>
+          <li><a href="#">Trimestre 2</a></li>
+          <li><a href="#">Trimestre 3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Encabezado del autor -->
+  <div class="encabezado-autor">
+    Nombre: Jossue David Cordova Navas &nbsp; | &nbsp; Curso: 3ero "N"
+  </div>
+
+  <hr style="background-color: black;" />
+
+  <!-- Contenido -->
+  <div class="contenido">
+    <img src="comput.gif" alt="Computadora animada" />
+  </div>
+
+  <footer>
+    © 2025 Proyecto Técnico en Informática - Todos los derechos reservados
+  </footer>
+</body>
+</html>
